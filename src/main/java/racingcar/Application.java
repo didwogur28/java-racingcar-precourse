@@ -2,8 +2,10 @@ package racingcar;
 
 import racingcar.domain.Racing;
 import racingcar.view.InputView;
+import racingcar.view.OutputView;
 
 public class Application {
+
     public static void main(String[] args) {
 
         String carNames = InputView.inputCarName();
@@ -15,6 +17,7 @@ public class Application {
 
         for(int i = 0; i < turn; i++) {
             racing.race();
+            OutputView.resultCar(racing.getRacingCars());
         }
     }
 }
