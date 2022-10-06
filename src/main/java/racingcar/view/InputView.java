@@ -1,6 +1,7 @@
 package racingcar.view;
 
 import racingcar.domain.Code;
+import racingcar.domain.Validate;
 
 import java.util.Scanner;
 
@@ -10,17 +11,26 @@ public class InputView {
 
     public static String inputCarName() {
 
-        System.out.print(Code.INPUT_NAME_MSG);
-        String carNames = scanner.nextLine();
-
-        return carNames;
+        try {
+            System.out.print(Code.INPUT_NAME_MSG);
+            String carNames = scanner.nextLine();
+            Validate.carNameChk(carNames);
+            return carNames;
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+            return inputCarName();
+        }
     }
 
     public static int inputTurn() {
 
-        System.out.print(Code.INPUT_TURN_MSG);
-        String turn = scanner.nextLine();
-
-        return Integer.parseInt(turn);
+        try {
+            System.out.print(Code.INPUT_TURN_MSG);
+            String turn = scanner.nextLine();
+            return Integer.parseInt(turn);
+        } catch (IllegalArgumentException e) {
+            System.out.println(Code.NOT_NUM_ERROR);
+            return inputTurn();
+        }
     }
 }
