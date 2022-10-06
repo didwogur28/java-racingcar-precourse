@@ -1,5 +1,6 @@
 package racingcar;
 
+import racingcar.domain.Racing;
 import racingcar.view.InputView;
 
 public class Application {
@@ -7,5 +8,13 @@ public class Application {
 
         String carNames = InputView.inputCarName();
         int turn = InputView.inputTurn();
+
+        Racing racing = new Racing(carNames);
+
+        System.out.println("주행을 시작합니다.");
+
+        for(int i = 0; i < turn; i++) {
+            racing.race();
+        }
     }
 }

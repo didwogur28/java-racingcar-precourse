@@ -2,8 +2,8 @@ package racingcar.domain;
 
 public class Move {
 
-    public boolean move(int randomnum) {
-        if(randomnum >= Code.MOVING_FORWARD && randomnum <= Code.END) {
+    public boolean moveChk(int randomNum) {
+        if(randomNum >= Code.MOVING_FORWARD && randomNum <= Code.END) {
             return true;
         }
         return false;

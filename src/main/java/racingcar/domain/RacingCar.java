@@ -11,7 +11,7 @@ public class RacingCar  {
     }
 
     public void racing(int randomNum, Move move) {
-        if(move.move(randomNum)) {
+        if(move.moveChk(randomNum)) {
             moveCnt++;
         }
     }
