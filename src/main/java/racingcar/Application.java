@@ -23,5 +23,6 @@ public class Application {
 
         RacingResult result = new RacingResult(racing.getRacingCars());
         result.getMaxMoveCar();
+        OutputView.getWinRacing(result);
     }
 }

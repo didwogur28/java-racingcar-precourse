@@ -1,6 +1,7 @@
 package racingcar.view;
 
 import racingcar.domain.RacingCar;
+import racingcar.domain.RacingResult;
 
 import java.util.List;
 
@@ -22,4 +23,14 @@ public class OutputView {
         return result;
     }
 
+    public static void getWinRacing(RacingResult result) {
+        String winRacingCar = "";
+        for(RacingCar car : result.getWinRacingCar()) {
+            winRacingCar += car.getName() + ", ";
+        }
+        winRacingCar = winRacingCar.replaceAll(", $", "");
+
+        System.out.println("=== 주행 결과 ===");
+        System.out.println("최종 우승자 : " + winRacingCar);
+    }
 }
