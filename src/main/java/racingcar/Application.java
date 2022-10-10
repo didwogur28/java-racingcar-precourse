@@ -1,6 +1,7 @@
 package racingcar;
 
 import racingcar.domain.Racing;
+import racingcar.domain.RacingResult;
 import racingcar.view.InputView;
 import racingcar.view.OutputView;
 
@@ -19,5 +20,8 @@ public class Application {
             racing.race();
             OutputView.resultCar(racing.getRacingCars());
         }
+
+        RacingResult result = new RacingResult(racing.getRacingCars());
+        result.getMaxMoveCar();
     }
 }
